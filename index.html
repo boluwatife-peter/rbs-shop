@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RBS Premium Store</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">RBS Store</div>
 
@@ -28,94 +25,39 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
     <h1>Premium Shopping Experience</h1>
     <p>Discover high-quality products built for modern lifestyle.</p>
-    <button class="hero-btn">Shop Now</button>
   </div>
 </section>
 
-<!-- SHOP -->
 <section id="shop" class="shop">
   <h2>Featured Products</h2>
-
-  <div class="product-grid">
-
-    <!-- PRODUCT 1 -->
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80" alt="Watch">
-
-      <div class="badge">New</div>
-
-      <h3>Modern Watch</h3>
-      <p class="price">$49.99</p>
-
-      <button onclick="addToCart('Modern Watch', 49.99)">
-        Add to Cart
-      </button>
-    </div>
-
-    <!-- PRODUCT 2 -->
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="Headset">
-
-      <div class="badge">Hot</div>
-
-      <h3>Wireless Headset</h3>
-      <p class="price">$89.99</p>
-
-      <button onclick="addToCart('Wireless Headset', 89.99)">
-        Add to Cart
-      </button>
-    </div>
-
-    <!-- PRODUCT 3 -->
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=400&q=80" alt="Speaker">
-
-      <div class="badge">Sale</div>
-
-      <h3>Smart Speaker</h3>
-      <p class="price">$69.99</p>
-
-      <button onclick="addToCart('Smart Speaker', 69.99)">
-        Add to Cart
-      </button>
-    </div>
-
-  </div>
+  <div class="product-grid"></div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="about">
-  <h2>About Our Store</h2>
-  <p>
-    We are a modern premium store focused on delivering high-quality products,
-    fast shopping experience, and clean design.
-  </p>
+  <h2>About</h2>
+  <p>We build premium shopping experiences with modern UI and smooth UX.</p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>Email: support@rbsstore.com</p>
+  <h2>Contact</h2>
+  <p>support@rbsstore.com</p>
 </section>
 
-<!-- CART -->
 <aside id="cart" class="cart">
   <h3>Your Cart</h3>
   <div id="cart-items"></div>
 
   <p>Total: $<span id="cart-total">0</span></p>
 
-  <button onclick="clearCart()" class="clear-btn">Clear Cart</button>
+  <button onclick="clearCart()">Clear Cart</button>
 </aside>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 RBS Premium Store</p>
+  <p>© 2026 RBS Store</p>
 </footer>
 
 <script src="script.js"></script>
