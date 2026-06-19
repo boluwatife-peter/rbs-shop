@@ -124,4 +124,3 @@ function checkout() {
 /* INIT */
 renderProducts();
 updateCart();
-}
