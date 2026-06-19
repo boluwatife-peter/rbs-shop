@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RBS Premium Store</title>
 
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,7 +32,7 @@
 <section class="hero">
   <div class="hero-text">
     <h1>Premium Shopping Experience</h1>
-    <p>Discover high-quality products designed for your lifestyle.</p>
+    <p>Discover high-quality products built for modern lifestyle.</p>
     <button class="hero-btn">Shop Now</button>
   </div>
 </section>
@@ -41,14 +43,13 @@
 
   <div class="product-grid">
 
-    <!-- Product 1 -->
+    <!-- PRODUCT 1 -->
     <div class="product-card">
-      <img src="images/watch.jpg" alt="Modern Watch">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80" alt="Watch">
 
       <div class="badge">New</div>
 
       <h3>Modern Watch</h3>
-
       <p class="price">$49.99</p>
 
       <button onclick="addToCart('Modern Watch', 49.99)">
@@ -56,14 +57,13 @@
       </button>
     </div>
 
-    <!-- Product 2 -->
+    <!-- PRODUCT 2 -->
     <div class="product-card">
-      <img src="images/headset.jpg" alt="Wireless Headset">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="Headset">
 
       <div class="badge">Hot</div>
 
       <h3>Wireless Headset</h3>
-
       <p class="price">$89.99</p>
 
       <button onclick="addToCart('Wireless Headset', 89.99)">
@@ -71,14 +71,13 @@
       </button>
     </div>
 
-    <!-- Product 3 -->
+    <!-- PRODUCT 3 -->
     <div class="product-card">
-      <img src="images/speaker.jpg" alt="Smart Speaker">
+      <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=400&q=80" alt="Speaker">
 
       <div class="badge">Sale</div>
 
       <h3>Smart Speaker</h3>
-
       <p class="price">$69.99</p>
 
       <button onclick="addToCart('Smart Speaker', 69.99)">
@@ -90,13 +89,16 @@
 </section>
 
 <!-- ABOUT -->
-<section class="about">
+<section id="about" class="about">
   <h2>About Our Store</h2>
-  <p>We create premium digital shopping experiences with modern design and smooth usability.</p>
+  <p>
+    We are a modern premium store focused on delivering high-quality products,
+    fast shopping experience, and clean design.
+  </p>
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
+<section id="contact" class="contact">
   <h2>Contact Us</h2>
   <p>Email: support@rbsstore.com</p>
 </section>
@@ -105,10 +107,13 @@
 <aside id="cart" class="cart">
   <h3>Your Cart</h3>
   <div id="cart-items"></div>
+
   <p>Total: $<span id="cart-total">0</span></p>
+
   <button onclick="clearCart()" class="clear-btn">Clear Cart</button>
 </aside>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 RBS Premium Store</p>
 </footer>
@@ -116,5 +121,4 @@
 <script src="script.js"></script>
 
 </body>
-</html>
 </html>
