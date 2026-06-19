@@ -1,78 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RBS Shop</title>
+  <title>RBS Premium Store</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS File -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">RBS</div>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">RBS Store</div>
 
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+  <nav class="nav-links">
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Welcome to RBS Shop</h1>
-      <p>Discover products that match your lifestyle.</p>
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
+  </div>
+</header>
 
-      <div class="hero-buttons">
-        <button>Shop Now</button>
-        <button>Learn More</button>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Premium Shopping Experience</h1>
+    <p>Discover high-quality products designed for your lifestyle.</p>
+    <button class="hero-btn">Shop Now</button>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="shop">
+  <h2>Featured Products</h2>
+
+  <div class="product-grid">
+
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="images/watch.jpg" alt="Modern Watch">
+
+      <div class="badge">New</div>
+
+      <h3>Modern Watch</h3>
+
+      <p class="price">$49.99</p>
+
+      <button onclick="addToCart('Modern Watch', 49.99)">
+        Add to Cart
+      </button>
     </div>
 
-    <div class="hero-image">
-      <img src="https://via.placeholder.com/400" alt="Hero Image">
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="images/headset.jpg" alt="Wireless Headset">
+
+      <div class="badge">Hot</div>
+
+      <h3>Wireless Headset</h3>
+
+      <p class="price">$89.99</p>
+
+      <button onclick="addToCart('Wireless Headset', 89.99)">
+        Add to Cart
+      </button>
     </div>
-  </section>
 
-  <!-- SHOP -->
-  <section class="shop">
-    <h2>Our Products</h2>
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="images/speaker.jpg" alt="Smart Speaker">
 
-    <div class="product-grid">
-      <div class="product-card">
-        <h3>Product 1</h3>
-      </div>
+      <div class="badge">Sale</div>
 
-      <div class="product-card">
-        <h3>Product 2</h3>
-      </div>
+      <h3>Smart Speaker</h3>
 
-      <div class="product-card">
-        <h3>Product 3</h3>
-      </div>
+      <p class="price">$69.99</p>
+
+      <button onclick="addToCart('Smart Speaker', 69.99)">
+        Add to Cart
+      </button>
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>We are a modern shop focused on quality products and user experience.</p>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 RBS Shop. All rights reserved.</p>
-  </footer>
+<!-- ABOUT -->
+<section class="about">
+  <h2>About Our Store</h2>
+  <p>We create premium digital shopping experiences with modern design and smooth usability.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p>Email: support@rbsstore.com</p>
+</section>
+
+<!-- CART -->
+<aside id="cart" class="cart">
+  <h3>Your Cart</h3>
+  <div id="cart-items"></div>
+  <p>Total: $<span id="cart-total">0</span></p>
+  <button onclick="clearCart()" class="clear-btn">Clear Cart</button>
+</aside>
+
+<footer>
+  <p>© 2026 RBS Premium Store</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
+</html>
 </html>
