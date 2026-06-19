@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - RBS Store</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">RBS Checkout</div>
+</header>
+
+<section class="checkout">
+
+  <h2>Checkout</h2>
+
+  <div class="checkout-container">
+
+    <div class="checkout-form">
+      <h3>Customer Details</h3>
+
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Address">
+
+      <button onclick="payNow()">Pay Now</button>
+    </div>
+
+    <div class="order-summary">
+      <h3>Your Order</h3>
+      <div id="order-items"></div>
+
+      <p><strong>Total:</strong> $<span id="order-total">0</span></p>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const orderItems = document.getElementById("order-items");
+const orderTotal = document.getElementById("order-total");
+
+function loadOrder() {
+  let total = 0;
+  orderItems.innerHTML = "";
+
+  if (cart.length === 0) {
+    orderItems.innerHTML = "<p>No items in cart</p>";
+    return;
+  }
+
+  cart.forEach(item => {
+    total += item.price;
+
+    orderItems.innerHTML += `
+      <div style="display:flex;justify-content:space-between;margin:8px 0;">
+        <span>${item.name}</span>
+        <span>$${item.price}</span>
+      </div>
+    `;
+  });
+
+  orderTotal.textContent = total.toFixed(2);
+}
+
+async function payNow() {
+  if (cart.length === 0) {
+    alert("Cart is empty");
+    return;
+  }
+
+  try {
+    const res = await fetch("https://YOUR-RENDER-URL.onrender.com/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ items: cart })
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      alert(data.error);
+      return;
+    }
+
+    window.location.href = data.url;
+
+  } catch (err) {
+    alert("Payment failed: " + err.message);
+  }
+}
+
+loadOrder();
+</script>
+
+</body>
+</html>
